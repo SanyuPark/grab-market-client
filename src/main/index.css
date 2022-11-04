@@ -11,8 +11,8 @@
 }
 
 #body {
-  height: 100%;
-  width: 1023px;
+  height: 100vh;
+  width: 1024px;
   margin: 0 auto;
   padding-bottom: 24px;
 }
@@ -88,4 +88,9 @@
 }
 .product-avartar {
   width: 24px;
+}
+
+.product-link {
+  color: inherit;
+  text-decoration: none;
 }
