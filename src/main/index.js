@@ -8,7 +8,7 @@ function MainPage() {
   React.useEffect(function () {
     axios
       .get(
-        "https://870c5782-6ad1-45fb-93d8-b826234c9c37.mock.pstmn.io/products"
+        `https://870c5782-6ad1-45fb-93d8-b826234c9c37.mock.pstmn.io/products`
       )
       .then(function (result) {
         const products = result.data.products;
@@ -23,29 +23,35 @@ function MainPage() {
     <div>
       <div id="header">
         <div id="header-area">
-          <img src="images/icons/logo.png" />
+          <img src="images/icons/logo.png" alt="profile" />
         </div>
       </div>
       <div id="body">
         <div id="banner">
-          <img src="images/banners/banner1.png" />
+          <img src="images/banners/banner1.png" alt="profile" />
         </div>
+
         <h1>판매되는 상품들</h1>
         <div id="product-list">
           {products.map(function (product, index) {
             return (
               <div className="product-card">
-                <Link className="product-link" to={`/products/" + ${index}`}>
+                <Link className="product-link" to={`/products/${product.id}`}>
                   <div>
-                    <img className="product-img" src={product.imageUrl} />
+                    <img
+                      className="product-img"
+                      src={product.imageUrl}
+                      alt=""
+                    />
                   </div>
                   <div className="product-contents">
                     <span className="product-name">{product.name}</span>
                     <span className="product-price">{product.price}원</span>
                     <div className="product-seller">
                       <img
-                        className="product-avartar"
+                        className="product-avatar"
                         src="images/icons/avatar.png"
+                        alt=""
                       />
                       <span>{product.seller}</span>
                     </div>
