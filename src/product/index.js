@@ -8,7 +8,7 @@ function ProductPage() {
   useEffect(function () {
     axios
       .get(
-        "https://870c5782-6ad1-45fb-93d8-b826234c9c37.mock.pstmn.io/products"
+        `https://cd729dac-9a3f-436d-8055-88d601364781.mock.pstmn.io/products`
       )
       .then(function (result) {
         const products = result.data.products;
