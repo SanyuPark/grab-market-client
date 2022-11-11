@@ -1,18 +1,16 @@
 import { useParams } from "react-router-dom";
-import "./index.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import "./index.css";
 
 function ProductPage() {
   const { id } = useParams();
   const [product, setProducts] = useState(null);
   useEffect(function () {
     axios
-      .get(
-        `https://cd729dac-9a3f-436d-8055-88d601364781.mock.pstmn.io/products/${id}`
-      )
+      .get(`http://localhost:8080/products/${id}`)
       .then(function (result) {
-        setProducts(result.data);
+        setProducts(result.data.product);
       })
       .catch(function (error) {
         console.error("에러 발생 : ", error);
