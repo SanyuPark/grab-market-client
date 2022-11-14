@@ -58,7 +58,7 @@ function MainPage() {
               <div className="product-card">
                 {product.soldout === 1 && <div className="product-blur" />}
                 <Link className="product-link" to={`/products/${product.id}`}>
-                  <div>
+                  <div id="product-img-box">
                     <img
                       className="product-img"
                       src={`${API_URL}/${product.imageUrl}`}
