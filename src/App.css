@@ -45,7 +45,7 @@ body,
 
 @media screen and (max-width: 400px) {
   .product-card {
-    width: 160px !important;
+    width: 165px !important;
   }
 
   #product-list {
