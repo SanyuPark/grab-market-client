@@ -52,10 +52,12 @@ function ProductPage() {
       </div>
       <div id="contents-box">
         <div id="name">{product.name}</div>
-        <div id="price">{product.price}원</div>
+        <div id="price">{product.price.toLocaleString("ko-kr")}원</div>
         <div id="createdAt">
           {dayjs(product.createdAt).format("YYYY년 MM월 DD일")}
         </div>
+
+        <pre id="description">{product.description}</pre>
         <Button
           id="purcahse-button"
           size="large"
@@ -66,7 +68,6 @@ function ProductPage() {
         >
           결제하기
         </Button>
-        <pre id="description">{product.description}</pre>
       </div>
     </div>
   );
